@@ -43,6 +43,18 @@ const gameBoard = (() => {
 
     //player 2
 
+    //CODE HERE//
+    // queryselect .field
+    // getID message
+    // getID restart-button
+
+    //fieldElements.forEach((field) => {
+        //field.addeventlisten(click, 
+        //})
+    //})
+
+
+
 
 
 
