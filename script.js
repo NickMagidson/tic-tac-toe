@@ -1,3 +1,14 @@
+const Player = (sign) => {
+    this.sign = sign;
+  
+    const getSign = () => {
+      return sign;
+    };
+  
+    return { getSign };
+  };
+
+
 const gameBoard = (() => {
     const board = ["", "", "", "", "", "", "", "", "", ]
 
@@ -19,21 +30,10 @@ const gameBoard = (() => {
     }
     return {setBoard, getBoard, reset};
 })();
-    //store board as empty array
-
-    //generate via loop? i < 9,etc (alternatively create in html)
-    //const setField 
-
-
-    //const getField
 
 
 
-    //const reset =
 
-
-
-    //return {} //Factory way
 
 // displayController
     //lets players make marks on baored
