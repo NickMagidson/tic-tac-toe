@@ -9,7 +9,9 @@ export default class GameView {
                 <div class="header-status">
                     In Progress
                 </div>
-                <button type="button" class="header-restart">
+                <button type="button" class="header-restart"><span class="material-icons">
+                refresh
+                </span>
                     <i class="material-icons>refresh</i>
                 </button>
             </div>
