@@ -2,10 +2,11 @@ import Game from "./game.js";
 
 let game = new Game();
 
-console.log(game.turn);
-game.makeMove(0);
-console.log(game.board.join(","));
-
-console.log(game.turn);
-game.makeMove(6);
-console.log(game.board.join(","));
+game.makeMove(0) // x
+game.makeMove(3) // o
+game.makeMove(7) // x
+game.makeMove(4) // o
+game.makeMove(2) // x
+game.makeMove(5) // x
+console.log(game.board);
+console.log(game.findWinConditions());
