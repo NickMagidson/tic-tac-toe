@@ -4,7 +4,7 @@ export default class GameView {
         this.root.innerHTML = `
             <div class="header">
             <div class="header-turn"></div>
-            <div class="header-status"> In Progress</div>
+            <div class="header-status"></div>
             <button type="button" class="header-restart"> 
                 <i class="material-icons">refresh</i>
             </button>
@@ -48,14 +48,34 @@ export default class GameView {
     }
 
     updateTurn(game) {
-        
+        this.root.querySelector(".header-turn").textContent = `${game.turn}'s turn`;
     }
 
     updateStatus(game) {
+        let status = "in Progress";
 
+        if (game.findWinningConditions) {
+            status = `${game.turn} is the winner!`;
+        } else if (!game.isInProgress()) {
+            status = "It's a tie!";
+        }
+
+        this.root.querySelector('.header-status').textContent = status;
     }
 
     updateBoard(game) {
+        const winningCondition = game.findWinConditions();
+
+        for (let i = 0; i < game.board.length; i++) {
+            const tile = this.root.querySelector(`.board-tile[data-index="${i}"]`)
+
+            tile.classList.remove('board-tile--winner');
+            tile.textContent = game.board[i];
+
+            if (winningCondition && winningCondition.includes(i)) {
+                tile.classList.add('board-tile--winner');
+            }
         
+        }
     }
 }
