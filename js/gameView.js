@@ -52,9 +52,9 @@ export default class GameView {
     }
 
     updateStatus(game) {
-        let status = "in Progress";
+        let status = "In Progress";
 
-        if (game.findWinningConditions) {
+        if (game.findWinConditions()) {
             status = `${game.turn} is the winner!`;
         } else if (!game.isInProgress()) {
             status = "It's a tie!";
